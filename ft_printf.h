@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 15:50:59 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/10/20 16:37:50 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/10/21 18:24:27 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	ft_print_digit_lower(long n, int base);
 int	ft_print_digit_upper(long n, int base);
 int	ft_putnbr(int n);
 int	ft_putadd(void *add);
-int	ft_putunsigned(unsigned int n);
+int	ft_put_unsigned(unsigned int n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:50:46 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/10/20 16:34:25 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/10/21 18:25:54 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	print_conversion(char specifier, va_list arg)
 	if (specifier == 'p')
 		return (ft_putadd(va_arg(arg, void *)));
 	if (specifier == 'u')
-		return (ft_putunsigned(va_arg(arg, unsigned int)));
+		return (ft_put_unsigned(va_arg(arg, unsigned int)));
 	if (specifier == '%')
 		return (ft_putchar('%'));
 	return (0);

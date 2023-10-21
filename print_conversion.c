@@ -6,7 +6,7 @@
 /*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:18:07 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/10/20 16:34:59 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/10/21 18:24:36 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,31 +78,43 @@ int	ft_putnbr(int n)
 
 int	ft_putadd(void *add)
 {
-	char			*hex;
-	int				count;
-	unsigned long	n;
+	int					i;
+	int					count;
+	char				*hex;
+	char				adresse[16];
+	unsigned long int	n;
 
 	hex = "0123456789abcdef";
 	count = 0;
-	n = (unsigned long) add;
-	if (n >= 16)
-		ft_putadd((void *)(n / 16));
-	else
+	i = 0;
+	n = (size_t) add;
+	count += ft_putstr("0x");
+	if (!n)
 	{
 		count += ft_putchar('0');
-		count += ft_putchar('x');
+		return (count);
 	}
-	count += ft_putchar(hex[n % 16]);
+	while (n > 0)
+	{
+		adresse[i++] = hex[n % 16];
+		n /= 16;
+	}
+	while (i)
+		count += ft_putchar(adresse[--i]);
 	return (count);
 }
 
-int	ft_putunsigned(unsigned int n)
+int	ft_put_unsigned(unsigned int n)
 {
 	int	count;
 
 	count = 0;
-	if (n >= 10)
-		ft_putunsigned(n / 10);
-	count += ft_putchar(n % 10 + '0');
+	if (n > 9)
+	{
+		count += ft_put_unsigned(n / 10);
+		count += ft_put_unsigned(n % 10);
+	}
+	else
+		count += ft_putchar(n + '0');
 	return (count);
 }
