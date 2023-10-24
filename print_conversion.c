@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_conversion.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+        */
+/*   By: fbelotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:18:07 by fbelotti          #+#    #+#             */
-/*   Updated: 2023/10/21 18:24:36 by fbelotti         ###   ########.fr       */
+/*   Updated: 2023/10/24 11:42:52 by fbelotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,16 +84,16 @@ int	ft_putadd(void *add)
 	char				adresse[16];
 	unsigned long int	n;
 
-	hex = "0123456789abcdef";
 	count = 0;
+	if (!add)
+	{
+		count += ft_putstr("(nil)");
+		return (count);
+	}
+	hex = "0123456789abcdef";
 	i = 0;
 	n = (size_t) add;
 	count += ft_putstr("0x");
-	if (!n)
-	{
-		count += ft_putchar('0');
-		return (count);
-	}
 	while (n > 0)
 	{
 		adresse[i++] = hex[n % 16];
