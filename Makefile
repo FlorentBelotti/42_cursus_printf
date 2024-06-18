@@ -6,38 +6,60 @@
 #    By: fbelotti <marvin@42perpignan.fr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/14 15:56:01 by fbelotti          #+#    #+#              #
-#    Updated: 2023/10/20 16:35:35 by fbelotti         ###   ########.fr        #
+#    Updated: 2024/06/18 15:30:09 by fbelotti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC	=	ft_printf.c \
-		util.c \
-		print_conversion.c \
+NAME = ft_printf.a
+AUTHOR = Florent Belotti
 
-CC	= gcc -Wall -Wextra -Werror
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+DEBUG_FLAGS = -g -O0
 
-RM	= rm -f
+SRCDIR = Src
+INCDIR = Includes
+OBJDIR = Obj
 
-NAME	=	libftprintf.a
+SRC = $(shell find $(SRCDIR) -name \*.c -type f -print)
 
-OBJS	=	$(SRC:.c=.o)
+OBJ = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 
-HEADER	=	ft_printf.h
+DEPS = $(OBJ:.o=.d)
 
-all: $(NAME)
+INCLUDES = -I$(INCDIR)
 
-$(NAME) : $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+all: intro $(NAME)
 
-%.o: %.c $(HEADER)
-	$(CC) -c $< -o $@
+intro:
+	@echo "\n==================================="
+	@echo "Compiling:	$(NAME)"
+	@echo "Author:		$(AUTHOR)"
+	@echo "===================================\n"
 
-clean :
-	rm -f $(OBJS) $(OBJSBONUS)
+$(NAME): $(OBJ)
+	@echo "ft_printf: Creating library $@..."
+	@ar rcs $@ $(OBJ)
+	@echo "ft_printf: Library $@ created.\n"
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c $(INCDIR)/ft_printf.h
+	@mkdir -p $(OBJDIR)
+	@$(CC) $(CFLAGS) $(INCLUDES) -MMD -c $< -o $@
+
+-include $(DEPS)
+
+clean:
+	@echo "ft_printf: clean: Cleaning object files..."
+	@rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "ft_printf: fclean: Cleaning all build files..."
+	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+debug: CFLAGS += $(DEBUG_FLAGS)
+debug: re
+
+.PHONY: all clean fclean re debug intro
+
