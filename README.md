@@ -26,14 +26,14 @@
         <h2>Mandatory Part</h2>
         <p>Your implementation of ft_printf() must handle the following conversions: c, s, p, d, i, u, x, X, and %.</p>
         <ul>
-            <li>%c: Prints a single character.</li>
-            <li>%s: Prints a string.</li>
-            <li>%p: Prints a void * pointer in hexadecimal format.</li>
-            <li>%d and %i: Print a signed integer in base 10.</li>
-            <li>%u: Prints an unsigned decimal (base 10) number.</li>
-            <li>%x: Prints a number in hexadecimal (base 16) lowercase.</li>
-            <li>%X: Prints a number in hexadecimal (base 16) uppercase.</li>
-            <li>%%: Prints a percent sign.</li>
+            <li><code>%c</code> Prints a single character.</li>
+            <li><code>%s</code> Prints a string.</li>
+            <li><code>%p</code> Prints a void * pointer in hexadecimal format.</li>
+            <li><code>%d</code> and <code>%i</code> Print a signed integer in base 10.</li>
+            <li><code>%u</code> Prints an unsigned decimal (base 10) number.</li>
+            <li><code>%x</code> Prints a number in hexadecimal (base 16) lowercase.</li>
+            <li><code>%X</code> Prints a number in hexadecimal (base 16) uppercase.</li>
+            <li><code>%%</code> Prints a percent sign.</li>
         </ul>
     </section>
     <section>
