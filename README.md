@@ -57,10 +57,5 @@
     <section id="compilation">
         <h2>Compilation</h2>
         <p>Compile the library using the Makefile provided, ensuring all rules like <code>all</code>, <code>clean</code>, <code>fclean</code>, and <code>re</code> are present to manage the library properly.</p>
-    </section>
-    <section id="submission-and-evaluation">
-        <h2>Submission and Evaluation</h2>
-        <p>Submit your work on your assigned Git repository. Only the work present on the Git repository will be evaluated during the defense.</p>
-    </section>
 </body>
 </html>
