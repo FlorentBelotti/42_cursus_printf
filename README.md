@@ -17,7 +17,6 @@
             <li><a href="#mandatory-part">Mandatory Part</a></li>
             <li><a href="#bonus-part">Bonus Part</a></li>
             <li><a href="#compilation">Compilation</a></li>
-            <li><a href="#submission-and-evaluation">Submission and Evaluation</a></li>
         </ul>
     </nav>
     <section id="introduction">
