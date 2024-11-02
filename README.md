@@ -12,7 +12,6 @@
 
 <ul>
     <li><a href="#Introduction">Introduction</a></li>
-    <li><a href="#Common Instructions">Common Instructions</a></li>
     <li><a href="#Mandatory Part">Mandatory Part</a></li>
 </ul>
 </nav>
@@ -23,18 +22,6 @@
 <div align="justify">
 
 The `printf` project involves recreating the `libc`'s `printf()` function. This will introduce you to variadic functions in C, a critical skill for handling functions that accept an indefinite number of arguments. Implementing this function will help you understand more about handling different data types and formatting output.
-
-<div align="left">
-
-### Common Instructions ![---------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-<section id="Common Instructions">
-
-<ul>
-    <li>The project must be coded in C and conform to the coding norm.</li>
-    <li>Handle memory properly - no leaks are tolerated.</li>
-    <li>Submit a Makefile that compiles your project with appropriate flags and does not relink.</li>
-    <li>Do not implement buffer management like the original `printf()`.</li>
-</ul>
 
 <div align="left">
 
